@@ -38,6 +38,7 @@
         "ignoreRestSiblings": false,
         "varsIgnorePattern": "_"
       }
-    ]
+    ],
+    "react/prop-types": "off"
   }
 }

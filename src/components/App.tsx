@@ -3,6 +3,42 @@ import React, { useEffect, useState } from 'react';
 
 const todoDataUrl = 'http://localhost:3100/todos';
 
+interface TodoTitleProps {
+  title: string;
+  as: string;
+}
+const TodoTitle: React.VFC<TodoTitleProps> = ({ title, as }) => {
+  if (as === 'h1') return <h1>{title}</h1>;
+  if (as === 'h2') return <h2>{title}</h2>;
+  return <p>{title}</p>;
+};
+
+interface TodoItemProps {
+  todo: ITodo;
+}
+const TodoItem: React.VFC<TodoItemProps> = ({ todo }) => {
+  return (
+    <li>
+      {todo.content}
+      <button>{todo.done ? '未完了リストへ' : '完了リストへ'}</button>
+      <button>削除</button>
+    </li>
+  );
+};
+
+interface TodoListProps {
+  todoList: ITodo[];
+}
+const TodoList: React.VFC<TodoListProps> = ({ todoList }) => {
+  return (
+    <ul>
+      {todoList.map((todo) => (
+        <TodoItem todo={todo} key={todo.id} />
+      ))}
+    </ul>
+  );
+};
+
 interface ITodo {
   id: number;
   content: string;
@@ -36,29 +72,13 @@ const App: React.VFC = () => {
 
   return (
     <>
-      <h1>TODO進捗管理</h1>
+      <TodoTitle title="TODO進捗管理" as="h1" />
       <textarea />
       <button>+ TODOを追加</button>
-      <h2>未完了TODOリスト</h2>
-      <ul>
-        {inCompletedList.map((todo) => (
-          <li key={todo.id}>
-            {todo.content}
-            <button>{todo.done ? '未完了リストへ' : '完了リストへ'}</button>
-            <button>削除</button>
-          </li>
-        ))}
-      </ul>
-      <h2>完了TODOリスト</h2>
-      <ul>
-        {completedList.map((todo) => (
-          <li key={todo.id}>
-            {todo.content}
-            <button>{todo.done ? '未完了リストへ' : '完了リストへ'}</button>
-            <button>削除</button>
-          </li>
-        ))}
-      </ul>
+      <TodoTitle title="未完了TODOリスト" as="h2" />
+      <TodoList todoList={inCompletedList} />
+      <TodoTitle title="完了TODOリスト" as="h2" />
+      <TodoList todoList={completedList} />
     </>
   );
 };
