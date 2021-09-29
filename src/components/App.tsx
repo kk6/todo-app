@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
-const todoDataUrl = 'http://localhost:3100/todos';
+import { todoDataUrl } from '../constants';
+import { ITodo } from '../models';
 
 interface TodoTitleProps {
   title: string;
@@ -38,12 +38,6 @@ const TodoList: React.VFC<TodoListProps> = ({ todoList }) => {
     </ul>
   );
 };
-
-interface ITodo {
-  id: number;
-  content: string;
-  done: boolean;
-}
 
 const App: React.VFC = () => {
   const [todoList, setTodoList] = useState<ITodo[]>([]);
