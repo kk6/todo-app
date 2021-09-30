@@ -8,21 +8,26 @@
     {
       "id": 2,
       "content": "JSON Server 仮の API を作成する",
-      "done": false
+      "done": true
     },
     {
       "id": 3,
       "content": "Chakra UI をインストールする",
-      "done": false
+      "done": true
     },
     {
       "content": "todo-app を作成する",
       "id": "01FGSM4KGBYHSYPX0JEQ1WP25B",
-      "done": false
+      "done": true
     },
     {
       "content": "todo-app にテスト投稿してみる",
       "id": "01FGSM4YEQ8BGECQJT4VBHZW26",
+      "done": true
+    },
+    {
+      "content": "焼肉食べる",
+      "id": "01FGTR4JCFPBMYRVC5GQ2GP274",
       "done": false
     }
   ]

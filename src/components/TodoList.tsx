@@ -1,27 +1,39 @@
+import { HeadingProps, List } from '@chakra-ui/react';
 import React from 'react';
 import { ITodo } from '../models';
 import { TodoItem } from './TodoItem';
+import { TodoTitle } from './TodoTitle';
 
-interface TodoListProps {
+interface TodoListProps extends HeadingProps {
   todoList: ITodo[];
   toggleTodoListItemStatus: (id: string, done: boolean) => void;
   deleteTodoListItem: (id: string) => void;
 }
 export const TodoList: React.VFC<TodoListProps> = ({
+  title,
+  as,
+  fontSize,
   todoList,
   toggleTodoListItemStatus,
   deleteTodoListItem,
 }) => {
   return (
-    <ul>
-      {todoList.map((todo) => (
-        <TodoItem
-          todo={todo}
-          key={todo.id}
-          toggleTodoListItemStatus={toggleTodoListItemStatus}
-          deleteTodoListItem={deleteTodoListItem}
-        />
-      ))}
-    </ul>
+    <>
+      {todoList.length !== 0 && (
+        <>
+          <TodoTitle title={title} as={as} fontSize={fontSize} mt="12" />
+          <List w="full">
+            {todoList.map((todo) => (
+              <TodoItem
+                todo={todo}
+                key={todo.id}
+                toggleTodoListItemStatus={toggleTodoListItemStatus}
+                deleteTodoListItem={deleteTodoListItem}
+              />
+            ))}
+          </List>
+        </>
+      )}
+    </>
   );
 };
