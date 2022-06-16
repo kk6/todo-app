@@ -10,7 +10,6 @@ export const useTodo = () => {
     todoData.getAllTodosData().then((todo) => {
       setTodoList([...todo].reverse());
     });
-    console.log('hoge');
   }, []);
 
   const toggleTodoListItemStatus = (id: string, done: boolean) => {
