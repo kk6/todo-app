@@ -1,7 +1,7 @@
 import { Heading, HeadingProps } from '@chakra-ui/react';
 import React from 'react';
 
-export const TodoTitle: React.VFC<HeadingProps> = ({
+export const TodoTitle: React.FC<HeadingProps> = ({
   title,
   as,
   fontSize,

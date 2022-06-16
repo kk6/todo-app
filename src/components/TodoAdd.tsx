@@ -9,7 +9,7 @@ interface TodoAddProps {
   inputEl: LegacyRef<HTMLTextAreaElement>;
   handleAddTodoListItem: () => void;
 }
-export const TodoAdd: React.VFC<TodoAddProps> = ({
+export const TodoAdd: React.FC<TodoAddProps> = ({
   placeholder,
   leftIcon,
   buttonText,

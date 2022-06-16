@@ -9,7 +9,7 @@ interface TodoListProps extends HeadingProps {
   toggleTodoListItemStatus: (id: string, done: boolean) => void;
   deleteTodoListItem: (id: string) => void;
 }
-export const TodoList: React.VFC<TodoListProps> = ({
+export const TodoList: React.FC<TodoListProps> = ({
   title,
   as,
   fontSize,

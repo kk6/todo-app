@@ -8,7 +8,7 @@ interface TodoItemProps {
   toggleTodoListItemStatus: (id: string, done: boolean) => void;
   deleteTodoListItem: (id: string) => void;
 }
-export const TodoItem: React.VFC<TodoItemProps> = ({
+export const TodoItem: React.FC<TodoItemProps> = ({
   todo,
   toggleTodoListItemStatus,
   deleteTodoListItem,

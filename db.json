@@ -29,6 +29,11 @@
       "content": "焼肉食べる",
       "id": "01FGTR4JCFPBMYRVC5GQ2GP274",
       "done": false
+    },
+    {
+      "content": "React 18 にアップデート",
+      "id": "01G5NSVPYKG5X671V5WGA0FE8X",
+      "done": true
     }
   ]
 }

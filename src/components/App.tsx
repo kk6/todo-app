@@ -6,7 +6,7 @@ import { TodoAdd } from './TodoAdd';
 import { Container } from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
 
-const App: React.VFC = () => {
+const App: React.FC = () => {
   const {
     todoList,
     addTodoListItem,
